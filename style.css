@@ -1,0 +1,81 @@
+#Texas {
+  background-color: black;
+}
+
+h1 {
+  color: green;
+}
+
+p {
+  color: white;
+  font-style: italic;
+}
+
+#game-text {
+  color: red;
+}
+
+.card {
+
+}
+
+body {
+  text-align: center;
+}
+
+.board {
+  height: 65%;
+  width: 85%;
+  display: block;
+  background-color: tan;
+  padding: 5%;
+}
+.card img {
+  max-width: 80%;
+  max-height: 70%;
+  visibility: visible;
+  margin-top: 25%;
+}
+.card {
+  height: 130px;
+  width: 150px;
+  border: black 20px;
+  background-color: teal;
+  color: yellow;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  margin: 7px;
+  visibility: visible;
+  animation-name: grow;
+  animation-duration: 2.5s;
+  animation-delay: 1s;
+}
+.card:hover{
+  cursor: pointer;
+  transform: rotateZ(5deg);
+}
+footer {
+  padding-top: 35px;
+}
+
+button {
+  margin-right: 25px;
+}
+button:hover{
+  cursor: grab;
+}
+
+.twitter {
+  color: white;
+}
+
+#score {
+  color: white;
+  margin-right: 30px;
+}
+
+@keyframes grow {
+  from {height: 0px;}
+  to {height: 130px;}
+}
