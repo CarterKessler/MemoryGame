@@ -1,8 +1,9 @@
-
+//created some empty arrays to use
 var cardsInPlay = [];
 var cards = [];
 var jerk = [];
 var tries = [];
+//dynamically populated the cards array in order to randomize the cards later on
 var makeCardsArray = function(){
   var taco = [];
       taco.push('king');
@@ -27,6 +28,8 @@ console.log(tries.length);
 //
 // textTag = setTimeout(tagLine, 1200)
 
+
+//used some JS to update the user's experience
 document.getElementById("score").innerHTML= tries.length;
 
 // var resultsTag = function(){
@@ -39,6 +42,7 @@ document.getElementById("score").innerHTML= tries.length;
 //   }
 // };
 
+//built a function to randomize the cards for the next user attempt
 var randomCards = function() {
   if (jerk.length==5) {cards.sort(function(a, b){return 0.5 - Math.random()});
   createBoard(cards);
@@ -52,7 +56,10 @@ var randomCards = function() {
 
   };
 
+
+//built function to show the card being targeted by the user
 var turnCard = function(e){
+  //Need to see what I'm doing
   console.log(e.target.id);
   console.log(e.target.className);
   console.log(cards);
@@ -72,7 +79,11 @@ var turnCard = function(e){
 
   };
 
+
+//Built a function a determine if the user had success in finding a pair
 var isMatch = function (e) {
+
+      //Still need to know what I'm doing
      console.log(cardsInPlay[0]);
      console.log(cardsInPlay[1]);
      console.log(cardsInPlay[0] === cardsInPlay[1]);
@@ -82,6 +93,7 @@ var isMatch = function (e) {
       //  document.getElementById("game-text").innerHTML= "It's a match, find another one";
        var myVar;
 
+       //Used CSS timeout to show cards to the user before they are turned again for the next play
        myVar = setTimeout(deletePair, 300)
        function deletePair(e) {
          console.log(cardsInPlay[0]);
@@ -123,7 +135,7 @@ var isMatch = function (e) {
      } else {
 
        var turnOver;
-
+       //Used another timeout to  reset the cards
        turnOver = setTimeout(resetCards, 500)
        function resetCards(e) {
          var el = document.querySelectorAll('.card img');
@@ -134,9 +146,10 @@ var isMatch = function (e) {
            tries.push("wrong");
            document.getElementById("score").innerHTML= tries.length;
        };
-     }
+      }
      };
 
+//Built function to populate cardsInPlay array and use some game logic
 var isTwoCards = function (e){
     cardsInPlay.push(this.getAttribute('data-card'));
     console.log(cardsInPlay);
@@ -148,6 +161,7 @@ var isTwoCards = function (e){
     };
 
 
+//Function using JS to create elements, give them value and put them into the HTML
 var createBoard = function(cards){
    for (i=0; i<cards.length; i++){
      //made a new elemet- div

@@ -1,2 +1,2 @@
 # MemoryGame
-JS logic
+Carters memory game
