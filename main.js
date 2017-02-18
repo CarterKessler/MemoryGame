@@ -19,7 +19,31 @@ var makeCardsArray = function(){
       return taco;
     };
 
+var makeDifferentCards = function(){
+  var taco = [];
+      taco.push('king');
+      taco.push('jack');
+      taco.push('ace');
+      taco.push('joker');
+      taco.push('king');
+      taco.push('queen');
+      taco.push('jack');
+      taco.push('ace');
+      taco.push('queen');
+      taco.push('joker');
+      taco.push('Pope');
+      taco.push('Obama');
+      taco.push('Trump');
+      taco.push('CNN');
+      taco.push('NotCNN');
+      taco.push('Nobody');
+
+      return taco;
+      };
+
 cards = makeCardsArray();
+
+
 
 console.log(cards.length);
 console.log(tries.length);
@@ -161,8 +185,9 @@ var isTwoCards = function (e){
     };
 
 
-//Function using JS to create elements, give them value and put them into the HTML
+//Function using JS to create elements, give them values & put them into the HTML
 var createBoard = function(cards){
+    //Looping through the cards array
    for (i=0; i<cards.length; i++){
      //made a new elemet- div
      var board = document.getElementById("game-board")
@@ -175,7 +200,7 @@ var createBoard = function(cards){
      div.setAttribute('id', i);
      //add the div to the body, the game-board id
      document.getElementById("game-board").appendChild(div);
-
+     //BIG - added *2* Events
     div.addEventListener('click', turnCard);
     div.addEventListener('click', isTwoCards);
   };
